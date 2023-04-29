@@ -37,7 +37,7 @@ def login( request: schemas.login_details, db: Session= Depends(database.db_get)
 
     if auth_key.otp != request.otp :
         return (f"entered otp : {request.otp} is incorrect ")
-    return ("sucessfully logged in....")
+    return ("sucessfully logged in....", auth_key.jwt)
     # except Exception as e:
     #     return e
 
